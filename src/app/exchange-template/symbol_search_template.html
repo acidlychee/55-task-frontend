@@ -1,0 +1,14 @@
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="card">
+		<div class="card-body">
+			<label>
+  Symbol:
+  <input type="text" [formControl]="symbol">
+</label>
+			<p>
+				<button (click)="getDataBySymbol()">Search</button>
+			</p>
+		</div>
+	</div>
+	<app-exchange-table [data]=data [columns]=columns></app-exchange-table>
+</body>

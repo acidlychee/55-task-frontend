@@ -1,0 +1,17 @@
+<table class="table table-striped">
+  <tr>
+    <th scope="col" *ngFor="let col of columns">
+      {{col}}
+    </th>
+  </tr>
+  <tr scope="row" *ngFor="let item of data | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+    <td *ngFor="let col of columns">
+      {{item[col]}}
+    </td>
+  </tr>
+</table>
+
+<ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="data.length"></ngb-pagination>
